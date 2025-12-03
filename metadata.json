@@ -1,0 +1,7 @@
+{
+  "name": "JSON Deep Dive",
+  "description": "A professional-grade JSON parser and visualizer allowing users to format, validate, and explore complex JSON structures with collapsible deep linking.",
+  "requestFramePermissions": [
+    "clipboard-read"
+  ]
+}
