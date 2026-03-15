@@ -9,7 +9,8 @@ const DEFAULT_JSON = `{
   "tips": [
     "Paste your JSON directly with Ctrl+V",
     "Or click the 'Paste' button below",
-    "Use tabs to manage multiple JSON files"
+    "Use tabs to manage multiple JSON files",
+    "JSONL (JSON Lines) format is also supported!"
   ],
   "features": {
     "validation": true,

@@ -15,6 +15,17 @@ export const safeJsonParse = (input: string): { parsed: JsonValue | undefined; e
     const parsed = JSON.parse(input);
     return { parsed, error: null };
   } catch (err) {
+    // Try parsing as JSONL
+    const lines = input.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+    if (lines.length > 1) {
+      try {
+        const parsedLines = lines.map(line => JSON.parse(line));
+        return { parsed: parsedLines, error: null };
+      } catch (jsonlErr) {
+        // Fallback to original error if JSONL parsing also fails
+      }
+    }
+
     let errorMessage = "Invalid JSON";
     if (err instanceof Error) {
       errorMessage = err.message;
